@@ -222,10 +222,36 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
                     onPress={this.onPressFlag}
                     disabled={disabled}
                 >
-                    <Image
+                    {this.props.customFlagView 
+                    ? this.props.customFlagView 
+                    : <Image
                         source={Flags.get(iso2)}
                         style={[styles.flag, this.props.flagStyle]}
-                    />
+                        />
+                    }
+                    
+                    {/* <View style={styles.container}>
+                        <View>
+                            <DropdownChevron
+                                modalTitle={'Country code'}
+                                items={countryCodeItems}
+                                selectedItemDisplayFormatter={this._selectedItemDisplayFormatter}
+                                onSelected={this._handleCountryCodeSelected}
+                            />
+                        </View>
+                        {/* <View style={styles.phoneInputContainer}>
+                            <TextResponse
+                                ref={this.textResponse}
+                                placeholder={placeholder}
+                                maxLength={15}
+                                keyboardType={'number-pad'}
+                                textContentType={'telephoneNumber'}
+                                onResponseChanged={this._handleNumberChanged}
+                                onRemoved={this._handleNumberRemoved}
+                                defaultValue={this.state.number}
+                            />
+                        </View> 
+                    </View>; */}
                 </TouchableWithoutFeedback>
                 <View style={{ flex: 1, marginLeft: this.props.offset || 10 }}>
                     <TextComponent

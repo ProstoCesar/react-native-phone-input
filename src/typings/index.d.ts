@@ -12,6 +12,7 @@ import {
     TextInput,
     ImageRequireSource,
     ImageStyle,
+    View
 } from 'react-native';
 
 export type ViewStyle = StyleProp<ViewStyleRaw>;
@@ -154,6 +155,8 @@ export interface ReactNativePhoneInputProps<TextComponentType extends React.Comp
      * Function to be invoked when confirming country picker selection
      */
     onPressConfirm?: () => void;
+
+    customFlagView?: View
 }
 
 export default class ReactNativePhoneInput<
